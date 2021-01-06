@@ -1,12 +1,12 @@
-import Hello from './Hello'
 import './App.css';
+import NavBar from './NavBar';
 
 
 function App() {
   
   return (
     <div >
-      <Hello message="Paulo" />
+      <NavBar />
     </div>
   );
 }
