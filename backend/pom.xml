@@ -13,7 +13,11 @@
 	<artifactId>dsdeliver</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>dsdeliver</name>
+<<<<<<< HEAD
 	<description>Projeto Semana DevSuperior 2.0</description>
+=======
+	<description>Projeto Semana Dev Superior</description>
+>>>>>>> 066786d59a7e22cbb27ba35247dda033f9a2ca3f
 
 	<properties>
 		<java.version>11</java.version>
