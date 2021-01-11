@@ -36,9 +36,9 @@ export default function OrderCard({order}:Props) {
             </View>
             <Text style={styles.text}>{dateFromNow(order.moment)}</Text>
             <View style={styles.productsList}>
-                {order.products.map(product =>{
+                {order.products.map(product =>(
                     <Text key={product.id} style={styles.text}>{product.name}</Text>
-                })}
+                ))}
             </View>
         </View>
     );
