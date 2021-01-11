@@ -14,34 +14,35 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
-import com.devsuperior.dsdeliver.dto.OrderDTO;
+import com.devsuperior.dsdeliver.DTO.OrderDTO;
 import com.devsuperior.dsdeliver.services.OrderService;
 
 @RestController
-@RequestMapping(value = "/orders")
-public class OrderController {
-
+@RequestMapping(value="/orders")
+public class Ordercontroller {
+	
 	@Autowired
 	private OrderService service;
-
+	
 	@GetMapping
-	public ResponseEntity<List<OrderDTO>> findAll() {
-		List<OrderDTO> list = service.findAll();
+	public ResponseEntity<List<OrderDTO>> findAll(){
+		List<OrderDTO> list =service.findAll();
 		return ResponseEntity.ok().body(list);
 	}
-	
 	@PostMapping
-	public ResponseEntity<OrderDTO> insert(@RequestBody OrderDTO dto){
-		dto = service.insert(dto);
-		URI uri = ServletUriComponentsBuilder.
-				fromCurrentRequest().path("/{id}")
+	public ResponseEntity<OrderDTO> insert(@RequestBody OrderDTO dto)
+	{
+		dto= service.insert(dto);
+		URI uri=ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}")
 				.buildAndExpand(dto.getId()).toUri();
-		return ResponseEntity.created(uri).body(dto);
+		return ResponseEntity.created(uri).body(dto);				
 	}
-	
 	@PutMapping("/{id}/delivered")
-	public ResponseEntity<OrderDTO> setDelivered(@PathVariable Long id){
+	public ResponseEntity<OrderDTO> setDelivered(@PathVariable Long id)
+	{
 		OrderDTO dto = service.setDelivered(id);
 		return ResponseEntity.ok().body(dto);
+		
 	}
+	
 }
