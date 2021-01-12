@@ -13,6 +13,7 @@ export default function Orders() {
     const [isLoading, setIsLoading] = useState(false);
     const naviation = useNavigation();
     const isFocused = useIsFocused();
+    console.log(orders)
     const fetchData = () => {
         fetchOrders()
             .then(response => setOrders(response.data))
